@@ -332,6 +332,11 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 &lt;span id = &quot;white&quot;&gt;Fame:&lt;/span&gt;
 &lt;span id = &quot;green&quot;&gt;$fame&lt;/span&gt;
 
+&lt;span id = &quot;tab&quot;&gt;&lt;/tab&gt;
+
+&lt;span id = &quot;white&quot;&gt;Lumria:&lt;/span&gt;
+&lt;span id = &quot;green&quot;&gt;(print: 13-$day) days&lt;/span&gt;
+
 (if: $viewed_clav)[
 &lt;br&gt;
 
@@ -917,12 +922,12 @@ $He shakes your hand and thanks you profusely.
 &lt;i&gt;You gained 5 fame!&lt;/i&gt;
 (set: $fame = $fame + 5)
 ]
-(else-if: $result &gt; 50)[
+(else-if: $result &gt; 40)[
 $He is impressed by your arcane prowess.
 &lt;i&gt;You gained 3 fame!&lt;/i&gt;
 (set: $fame = $fame + 3)
 ]
-(else-if: $result &gt; 25)[
+(else-if: $result &gt; 20)[
 However, $he seems distrustful of your magic and quickly moves on.
 &lt;i&gt;You gained 1 fame!&lt;/i&gt;
 (set: $fame = $fame + 1)
@@ -962,7 +967,6 @@ $He is distinctly unimpressed and leaves without a word.
 	$metal + &quot; hourglass&quot;,
 	$metal + &quot; wand&quot;,
 	$metal + &quot; chalice&quot;,
-	$metal + &quot; latern plus candle&quot;,
 	$gem + &quot;-topped staff&quot;,
 	$gem + &quot;-topped wand&quot;,
 	$gem + &quot;-studded scabbard&quot;,
@@ -977,12 +981,9 @@ $He is distinctly unimpressed and leaves without a word.
 	&quot;bolt of &quot; + $color + &quot; silk&quot;,
 	&quot;stick of &quot; + $color + &quot; chalk&quot;,
 	$color + &quot; pine box&quot;,
-	$color + &quot; staff&quot;,
-	$color + &quot; wand&quot;,
 	$color + &quot; tome&quot;,
 	$color + &quot; candle&quot;,
-	$color + &quot; silk ribbon&quot;,
-	$color + &quot;-tinted vial&quot;,
+	$color + &quot; vial&quot;,
 	$color + &quot; pentacle&quot;,
 ))
 }</tw-passagedata><tw-passagedata pid="17" name="Random3Items" tags="" position="1454,228" size="100,100">{
@@ -1057,7 +1058,7 @@ You are able to extract a vast amount of energy from this subject.
 &lt;i&gt;Magic +(print:$c_harvest+2)&lt;/i&gt;
 (set: $magic = $magic + $c_harvest + 2)
 ]
-(else-if: $result &gt; 30)[
+(else-if: $result &gt; 40)[
 You feel your arcane powers growing as the soul is harvested.
 &lt;br&gt;&lt;br&gt;
 &lt;i&gt;Magic +(print:$c_harvest)&lt;/i&gt;
@@ -2216,9 +2217,9 @@ But Rhamnos cannot be swayed.
 ]
 }</tw-passagedata><tw-passagedata pid="75" name="NemesisHarvestResult" tags="" position="1021,2223" size="100,100">{
 (display: &quot;HUD&quot;)
-(set: $magic to $magic + 1000)
 (if: $harvest_lv is 3)[
 (set: $harvest_end to true)
+(set: $magic to $magic + 1000)
 You sense something you couldn&#39;t before. Hundreds of souls, woven into the fabric of the demon&#39;s being. Rhamnos is animated by the malice of its own past victims!
 &lt;br&gt;&lt;br&gt;
 You begin to pluck the spiteful souls from its body one-by-one. The demon shrinks back, writhing under the assault of your magic.
@@ -2292,7 +2293,7 @@ You take $home as your home.
 &lt;br&gt;&lt;br&gt;
 
 (if: $boon_end is true)[
-Luminaries of the age are drawn to seek your blessings. Your powers lies behind each great venture, or sudden turn of fortune, and for each your may extract your price.
+Luminaries of the age are drawn to seek your blessings. Your power lies behind each great venture, or sudden turn of fortune, and for each you extract your price.
 ]
 (if: $illusion_end is true)[
 All doorways and windows into your abode soon vanish. They say it is because you do not needs them; you can appear across Lumria at will, and nothing transpires there without your knowledge.
