@@ -285,6 +285,10 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (event: when time &gt; 4.0s)[
 (t8n: &quot;dissolve&quot;)[[[Your spell crackles into life!|BoonResult]]]
 ]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_spell.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="5" name="Illusion" tags="" position="555,399" size="100,100">{
 (set: $magic = $magic - $c_illusion)
 (set: $c_illusion = $c_illusion + 1)
@@ -300,6 +304,10 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (event: when time &gt; 3.0s)[
 (t8n: &quot;dissolve&quot;)[[[Your spell crackles into life!|IllusionResult]]]
 ]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_spell.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="6" name="Binding" tags="" position="727,400" size="100,100">{
 (set: $result to (random: 1, 100) + $m_harvest)
 (display: &quot;HUD&quot;)
@@ -313,6 +321,10 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (event: when time &gt; 3.0s)[
 (t8n: &quot;dissolve&quot;)[[[Your spell crackles into life!|BindingResult]]]
 ]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_spell.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="7" name="HUD" tags="" position="148,759" size="100,100">{
 (display: &quot;TextColor&quot;)
 &lt;div id=&quot;footer&quot;&gt;
@@ -468,6 +480,10 @@ $journey $ahead
 &lt;br&gt;&lt;br&gt;
 [[Check your inventory|MoveInv]]&lt;br&gt;
 [[Journey onwards|Stranger]]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_feet.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 ]
 }</tw-passagedata><tw-passagedata pid="9" name="RandomStranger" tags="" position="1451,101" size="100,100">{
 (set: $s_id to (random: 1, $strangers.length))
@@ -1132,7 +1148,7 @@ You feel your arcane powers growing as the soul is harvested.
 	&quot;blackest onyx&quot;,
 ))
 }</tw-passagedata><tw-passagedata pid="22" name="TextColor" tags="" position="1197,353" size="100,100">{
-(if: $location_c is &quot;red&quot;)[(enchant: ?passage, (text-colour: red + black))]
+(if: $location_c is &quot;red&quot;)[(enchant: ?passage, (text-colour: red + black + red))]
 (if: $location_c is &quot;blue&quot;)[(enchant: ?passage, (text-colour: cyan + black))]
 (if: $location_c is &quot;green&quot;)[(enchant: ?passage, (text-colour: green + black))]
 (if: $location_c is &quot;orange&quot;)[(enchant: ?passage, (text-colour: orange + black))]
@@ -1174,6 +1190,9 @@ You feel your arcane powers growing as the soul is harvested.
 (display: &quot;HUD&quot;)
 The pale light of your candle drifts through the jet black darkess, illuminating the divers spines of the library&#39;s countless mouldered tomes, before coming to rest upon [[one particular volume.|Intro2]]
 ]]
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_wind.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="24" name="Intro5" tags="" position="1506,716" size="100,100">{
 (set: $location_c to &quot;green&quot;)
 (display: &quot;HUD&quot;)
@@ -1190,6 +1209,9 @@ It seems that you slept beneath the bow of an ancient oak tree. You cast around 
 
 [[Gather your possessions|Intro6]]
 ]]
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_birds.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="25" name="Intro2" tags="" position="1593,558" size="100,100">{
 (display: &quot;HUD&quot;)
 The &lt;b&gt;Liber Nominum&lt;/b&gt;.
@@ -1458,6 +1480,10 @@ The tome outlines the ceremonies you could perform to garner favour with the &lt
 
 
 [[Close the Liber Clavium|Camp]]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_book.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="36" name="RiteBoon" tags="" position="875,1444" size="100,100">{
 (display: &quot;RemoveItems&quot;)
 (display: &quot;HUD&quot;)
@@ -1779,6 +1805,10 @@ The book is divided into three categories of spell, and the associated demons.
 [[Consult the Illusions of Asmodeus.|NominumIllusion]]&lt;br&gt;
 [[Consult Baal&#39;s Harvest of souls.|NominumHarvest]]&lt;br&gt;
 [[You&#39;ve read enough, it&#39;s time to go.|EndIntro]]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_book.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="52" name="Intro6" tags="" position="1362,774" size="100,100">{
 (display: &quot;HUD&quot;)
 You fled some distance in the night before succumbing to exhaustion, but you have much further to go.
@@ -1803,6 +1833,10 @@ These invocations cost 1mp and grow more costly to the user with each use, until
 [[Turn to the next chapter|NominumHarvest]]&lt;br&gt;
 [[Turn to the previous chapter|NominumBoon]]&lt;br&gt;
 [[Return to the index|Nominum1]]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_book.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="54" name="NominumBoon" tags="" position="1256,1053" size="100,100">{
 (set: $location_c to &quot;orange&quot;)
 (display: &quot;HUD&quot;)
@@ -1814,6 +1848,10 @@ These invocations cost 1mp and grow more costly to the user with each use, until
 &lt;br&gt;&lt;br&gt;
 [[Turn to the next chapter|NominumIllusion]]&lt;br&gt;
 [[Return to the index|Nominum1]]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_book.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="55" name="NominumHarvest" tags="" position="1560,968" size="100,100">{
 (set: $location_c to &quot;red&quot;)
 (display: &quot;HUD&quot;)
@@ -1825,6 +1863,10 @@ These invocations costs no mp, such is beneficence of Baal.
 &lt;br&gt;&lt;br&gt;
 [[Turn to the previous chapter|NominumIllusion]]&lt;br&gt;
 [[Return to the index|Nominum1]]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_book.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="56" name="Intro4" tags="" position="1664,806" size="100,100">{
 (display: &quot;HUD&quot;)
 You flee into the cold night, until the vast edifice of Nezoric&#39;s Tower is but a lonely sentinel on the horizon.
@@ -2100,6 +2142,10 @@ It emerges from the white-hot font transformed into a $forged_item.
 (t8n: &quot;dissolve&quot;)[[[Then silence.|NemesisArrives2]]]
 ]
 
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_wind.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
+
 }</tw-passagedata><tw-passagedata pid="69" name="NemesisEncounter" tags="" position="818,1949" size="100,100">{
 (set: $location_c to &quot;blue&quot;)
 (display: &quot;HUD&quot;)
@@ -2149,6 +2195,10 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (event: when time &gt; 4.0s)[
 (t8n: &quot;dissolve&quot;)[[[Your spell crackles into life!|NemesisBoonResult]]]
 ]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_spell.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="71" name="NemesisIllusion" tags="" position="792,2122" size="100,100">{
 (set: $location_c to &quot;green&quot;)
 (display: &quot;HUD&quot;)
@@ -2172,6 +2222,10 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (event: when time &gt; 3.0s)[
 (t8n: &quot;dissolve&quot;)[[[Your spell crackles into life!|NemesisIllusionResult]]]
 ]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_spell.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="72" name="NemesisHarvest" tags="" position="1062,2054" size="100,100">{
 (set: $location_c to &quot;red&quot;)
 (display: &quot;HUD&quot;)
@@ -2193,6 +2247,10 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (event: when time &gt; 3.0s)[
 (t8n: &quot;dissolve&quot;)[[[Your spell crackles into life!|NemesisHarvestResult]]]
 ]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_spell.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="73" name="NemesisBoonResult" tags="" position="648,2237" size="100,100">{
 (display: &quot;HUD&quot;)
 (if: $boon_lv is 3)[
@@ -2276,6 +2334,10 @@ And now, you are free. In this new land, you shall work your magic as you see fi
 (t8n: &quot;dissolve&quot;)[
 [[What does the future hold?|Outro]]
 ]]
+
+&lt;audio autoplay&gt;
+  &lt;source src=&quot;jots_birds.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="77" name="Expire" tags="" position="1317,1951" size="100,100">{
 (set: $location_c to &quot;red&quot;)
 (display: &quot;HUD&quot;)
