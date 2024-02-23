@@ -427,7 +427,7 @@ You set out, following an old dirt road.
 ]
 
 (else:)[
-(if: $day &lt;= 3)[
+(if: $day &lt;= 4)[
 (set: $journey to (either:
 	&quot;You press on&quot;,
 	&quot;You walk on&quot;,
@@ -442,7 +442,7 @@ You set out, following an old dirt road.
 	&quot;across the golden fields.&quot;,
 ))
 ]
-(if: $day &lt;= 6)[
+(if: $day &lt;= 8)[
 (set: $ahead to (either:
 	&quot;up a snaking mountain path.&quot;,
 	&quot;across a rickety canyon bridge.&quot;,
@@ -1238,11 +1238,11 @@ The $stranger is offended by your reticence and takes $his leave.
 [[A few minutes later, you also move on.|MoveOn]]
 }</tw-passagedata><tw-passagedata pid="29" name="LoadStrangers" tags="" position="395,101" size="100,100">{
 (set: $strangers to (a: 
-  (dm: &quot;name&quot;, &quot;acoustic priest&quot;,&quot;c_boon&quot;,4,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,4,&quot;m_boon&quot;,10,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
+  (dm: &quot;name&quot;, &quot;wandering acoustic priest&quot;,&quot;c_boon&quot;,4,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,4,&quot;m_boon&quot;,10,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
 (dm: &quot;name&quot;, &quot;12-gauge clockwork monk&quot;,&quot;c_boon&quot;,3,&quot;c_illusion&quot;,4,&quot;c_harvest&quot;,1,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,-10,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,-10),
 (dm: &quot;name&quot;, &quot;professional rainbow hunter&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,3,&quot;m_boon&quot;,10,&quot;m_illusion&quot;,-10,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
 (dm: &quot;name&quot;, &quot;virtue peddler&quot;,&quot;c_boon&quot;,4,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,4,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,20,&quot;m_trade&quot;,-10),
-(dm: &quot;name&quot;, &quot;Eastern dew farmer&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,2,&quot;c_harvest&quot;,2,&quot;m_boon&quot;,-10,&quot;m_illusion&quot;,10,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,10),
+(dm: &quot;name&quot;, &quot;southern dew farmer&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,2,&quot;c_harvest&quot;,2,&quot;m_boon&quot;,-10,&quot;m_illusion&quot;,10,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,10),
 (dm: &quot;name&quot;, &quot;mealwyrm rancher&quot;,&quot;c_boon&quot;,3,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,3,&quot;m_boon&quot;,-10,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
 (dm: &quot;name&quot;, &quot;mealwyrm poacher&quot;,&quot;c_boon&quot;,3,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,1,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
 (dm: &quot;name&quot;, &quot;mealwyrm rustler&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,2,&quot;m_boon&quot;,10,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
@@ -1287,7 +1287,7 @@ The $stranger is offended by your reticence and takes $his leave.
 (dm: &quot;name&quot;, &quot;crystalline florist&quot;,&quot;c_boon&quot;,3,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,3,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,20,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,20),
 (dm: &quot;name&quot;, &quot;jewel-eater&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,3,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,10,&quot;m_harvest&quot;,10,&quot;m_trade&quot;,10),
 (dm: &quot;name&quot;, &quot;travelling thereminist&quot;,&quot;c_boon&quot;,3,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,3,&quot;m_boon&quot;,10,&quot;m_illusion&quot;,10,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,10),
-(dm: &quot;name&quot;, &quot;odiferous tanner&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,2,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,-10,&quot;m_trade&quot;,-10),
+(dm: &quot;name&quot;, &quot;friendly odiferous tanner&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,2,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,-10,&quot;m_trade&quot;,-10),
 (dm: &quot;name&quot;, &quot;perpetual masquerader&quot;,&quot;c_boon&quot;,4,&quot;c_illusion&quot;,2,&quot;c_harvest&quot;,3,&quot;m_boon&quot;,10,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
 (dm: &quot;name&quot;, &quot;stern patrician&quot;,&quot;c_boon&quot;,4,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,4,&quot;m_boon&quot;,0,&quot;m_illusion&quot;,10,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,-10),
 (dm: &quot;name&quot;, &quot;judicial gladiator&quot;,&quot;c_boon&quot;,2,&quot;c_illusion&quot;,3,&quot;c_harvest&quot;,3,&quot;m_boon&quot;,-10,&quot;m_illusion&quot;,0,&quot;m_harvest&quot;,0,&quot;m_trade&quot;,0),
@@ -1535,7 +1535,15 @@ You awake the following morning feeling refreshed.
 }</tw-passagedata><tw-passagedata pid="40" name="RandomCamp" tags="" position="1331,1292" size="100,100">{
 (set: $somewhere to (either:
   &quot;in a forest clearing&quot;, 
-  &quot;by the side of a moonlit lake&quot;
+  &quot;by the side of a moonlit lake&quot;,
+  &quot;in a hidden glade, encircled by mushrooms&quot;,
+  &quot;in the mouth of a vast cavern&quot;,
+  &quot;by an overgrown log cabin&quot;,
+  &quot;on the roadside, by a cursed well&quot;,
+  &quot;on a high plateau with a commanding view&quot;,
+  &quot;atop a squat, mossy hill&quot;,
+  &quot;by an ancient barrow&quot;,
+  &quot;at a previously abandoned campsite&quot;,
 ))
 }</tw-passagedata><tw-passagedata pid="41" name="Nightfall" tags="" position="600,998" size="100,100">{
 (display: &quot;RandomCamp&quot;)
@@ -1773,7 +1781,7 @@ The book is divided into three categories of spell, and the associated demons.
 You fled some distance in the night before succumbing to exhaustion, but you have much further to go.
 &lt;br&gt;&lt;br&gt;
 
-You must reach Lumria, at least, to be beyond the remonstrance of your former master. 
+You must reach &lt;span id=&quot;cyan&quot;&gt;Lumria&lt;/span&gt;, at least, to be beyond the remonstrance of your former master. 
 &lt;br&gt;&lt;br&gt;
 
 But first, there is the book. Mastering it will be key to your survival.
@@ -1826,11 +1834,11 @@ You flee into the cold night, until the vast edifice of Nezoric&#39;s Tower is b
 }</tw-passagedata><tw-passagedata pid="57" name="EndIntro" tags="" position="936,850" size="100,100">{
 (display: &quot;HUD&quot;)
 (set: $intro to false)
-You stow your freshly acquired tome of magic away.
+You stow your newly acquired magic tome away.
 &lt;br&gt;&lt;br&gt;
 &lt;i&gt;You can now cast the spells: Boon, Illusion, and Harvest &lt;/i&gt;
 &lt;br&gt;&lt;br&gt;
-You turn to face the open road. Perhaps, in your travels, you will meet some subjects on which to test these spells?
+You turn to face the open road toward &lt;span id=&quot;cyan&quot;&gt;Lumria&lt;/span&gt;. Perhaps, in your travels, you will meet some promising subjects on whom to trial your magic?
 &lt;br&gt;&lt;br&gt;
 [[Begin your journey...|MoveOn]]
 }</tw-passagedata><tw-passagedata pid="58" name="SummonLines2" tags="" position="102,1202" size="100,100">{
