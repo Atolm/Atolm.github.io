@@ -335,7 +335,7 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 &lt;span id = &quot;tab&quot;&gt;&lt;/tab&gt;
 
 &lt;span id = &quot;white&quot;&gt;Lumria:&lt;/span&gt;
-&lt;span id = &quot;green&quot;&gt;(print: 13-$day) days&lt;/span&gt;
+&lt;span id = &quot;green&quot;&gt;(print: 10-$day) days&lt;/span&gt;
 
 (if: $viewed_clav)[
 &lt;br&gt;
@@ -427,13 +427,16 @@ You set out, following an old dirt road.
 ]
 
 (else:)[
-(if: $day &lt;= 4)[
 (set: $journey to (either:
 	&quot;You press on&quot;,
 	&quot;You walk on&quot;,
 	&quot;You continue&quot;,
 	&quot;You hike&quot;,
+	&quot;You meander&quot;,
+	&quot;You stalk&quot;,
+	&quot;You hurry&quot;,
 ))
+(if: $day &lt;= 3)[
 (set: $ahead to (either:
 	&quot;through the sun-dappled woodland.&quot;,
 	&quot;through the foothills.&quot;,
@@ -442,7 +445,7 @@ You set out, following an old dirt road.
 	&quot;across the golden fields.&quot;,
 ))
 ]
-(if: $day &lt;= 8)[
+(if: $day &lt;= 6)[
 (set: $ahead to (either:
 	&quot;up a snaking mountain path.&quot;,
 	&quot;across a rickety canyon bridge.&quot;,
@@ -1008,7 +1011,7 @@ $He is distinctly unimpressed and leaves without a word.
 
 (event: when time &gt; 1.0s)[
 (t8n: &quot;dissolve&quot;)[
-(if: $result &gt; 80)[It leaves $him completely at your mercy.]
+(if: $result &gt; 80)[$He is at your mercy.]
 (else-if: $result &gt; 40)[You must act fast to avoid breaking the spell.]
 (else:)[But something goes wrong, and $he flees in terror!]
 &lt;br&gt;&lt;br&gt;
@@ -1228,7 +1231,7 @@ A distant sound breaks your reverie, reminding you of the imminent danger of dis
 ]]
 }</tw-passagedata><tw-passagedata pid="27" name="TradeComplete" tags="" position="896,571" size="100,100">{
 (display: &quot;HUD&quot;)
-After much haggling the $stranger accept the offer. Pleased with $his new acquisition, $he continues on $his way.
+After much haggling the $stranger accepts the offer. Pleased with $his new acquisition, $he continues on $his way.
 &lt;br&gt;&lt;br&gt;
 [[You decide to do the same.|MoveOn]]
 }</tw-passagedata><tw-passagedata pid="28" name="TradeFailed" tags="" position="1029,658" size="100,100">{
@@ -1337,7 +1340,7 @@ A summoning circle has been etched in the soft earth, emitting a faint (either:&
 [[Study the Liber Clavium|Rites]]&lt;br&gt;
 [[Take stock of your inventory|CampInv]]&lt;br&gt;
 
-(if:$day &lt; 12)[[[Sleep|Sleep]]]
+(if:$day &lt; 9)[[[Sleep|Sleep]]]
 (else:)[[[Sleep...?|NemesisArrives]]]
 ]
 }</tw-passagedata><tw-passagedata pid="34" name="ItemGainedEffects" tags="" position="1314,354" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="35" name="Rites" tags="" position="800,1201" size="100,100">{
@@ -1507,11 +1510,11 @@ You arrange the required materials and open the &lt;b&gt;Liber Clavium&lt;/b&gt;
 [[Conclude the rite|Rites]]
 ]
 ]
-}</tw-passagedata><tw-passagedata pid="37" name="Sleep" tags="" position="301,898" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="37" name="Sleep" tags="" position="302,897" size="100,100">{
 (display: &quot;HUD&quot;)
 (set: $day to $day + 1)
 (set: $distance to 0)
-(set: $day_max_distance to (random: 3, 6))
+(set: $day_max_distance to (random: 3, 5))
 (set: $summoned to false)
 (set: $magic to $magic + 2)
 (set: $c_boon to 1)
@@ -1734,22 +1737,22 @@ You arrange the required materials and open the &lt;b&gt;Liber Clavium&lt;/b&gt;
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 3.5s)[
+(event: when time &gt; 2.5s)[
 (t8n: &quot;rumble&quot;)[Thou think the walls of Lumria proof against the power of Nezoric?]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 6.5s)[
+(event: when time &gt; 4.5s)[
 (t8n: &quot;rumble&quot;)[Too far! Too late! Even now he is turning the screw.]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 9.5s)[
+(event: when time &gt; 6.5s)[
 (t8n: &quot;rumble&quot;)[And yet.. perhaps... all may not be lost?]
 ]
 &lt;br&gt;&lt;br&gt;&lt;/i&gt;
 
-(event: when time &gt; 12.5s)[
+(event: when time &gt; 8.5s)[
 (t8n: &quot;dissolve&quot;)[[[What is your offer?|SummonLines2]]]&lt;br&gt;
 (t8n: &quot;dissolve&quot;)[[[Begone, vile sylph!|SummonLines2]]]
 ]
@@ -1834,11 +1837,11 @@ You flee into the cold night, until the vast edifice of Nezoric&#39;s Tower is b
 }</tw-passagedata><tw-passagedata pid="57" name="EndIntro" tags="" position="936,850" size="100,100">{
 (display: &quot;HUD&quot;)
 (set: $intro to false)
-You stow your newly acquired magic tome away.
+You stow away your newly acquired magic tome.
 &lt;br&gt;&lt;br&gt;
 &lt;i&gt;You can now cast the spells: Boon, Illusion, and Harvest &lt;/i&gt;
 &lt;br&gt;&lt;br&gt;
-You turn to face the open road toward &lt;span id=&quot;cyan&quot;&gt;Lumria&lt;/span&gt;. Perhaps, in your travels, you will meet some promising subjects on whom to trial your magic?
+You turn to face the open road, towards &lt;span id=&quot;cyan&quot;&gt;Lumria&lt;/span&gt;. Perhaps, in your travels, you will meet some promising subjects on whom to trial your magic?
 &lt;br&gt;&lt;br&gt;
 [[Begin your journey...|MoveOn]]
 }</tw-passagedata><tw-passagedata pid="58" name="SummonLines2" tags="" position="102,1202" size="100,100">{
@@ -1850,38 +1853,38 @@ You turn to face the open road toward &lt;span id=&quot;cyan&quot;&gt;Lumria&lt;
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 3.5s)[
+(event: when time &gt; 2.5s)[
 (t8n: &quot;rumble&quot;)[The &lt;b&gt;Liber Clavium&lt;/b&gt;. Take it!]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 6.5s)[
+(event: when time &gt; 4.5s)[
 (t8n: &quot;rumble&quot;)[Perform the rites. Grow in renown!]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 9.5s)[
-(t8n: &quot;rumble&quot;)[Thy name must reach the Archons. The only hope...]
+(event: when time &gt; 6.5s)[
+(t8n: &quot;rumble&quot;)[Thy fame must reach the Archons. Thy only hope...]
 ]
 &lt;br&gt;&lt;br&gt;&lt;/i&gt;
 
-(event: when time &gt; 12.5s)[
+(event: when time &gt; 8.5s)[
 (t8n: &quot;dissolve&quot;)[[[The imp fades, leaving a strange book|Camp]]]
 ]
 }</tw-passagedata><tw-passagedata pid="59" name="GetMephLv" tags="" position="1447,1288" size="100,100">{
 (if: $day is 1) [
 	(set: $meph_lv to 1)
 ]
-(if: $day &gt;= 3 and $fame &lt; 30) [
+(if: $day &gt;= 3 and $fame &lt;= 30) [
 	(set: $meph_lv to 2)
 ]
-(if: $day &gt;= 3 and $fame &gt; 40) [
+(if: $day &gt;= 3 and $fame &gt;= 40) [
 	(set: $meph_lv to 3)
 ]
-(if: $day &gt;= 6 and $fame &lt; 30) [
+(if: $day &gt;= 7 and $fame &lt;= 30) [
 	(set: $meph_lv to 4)
 ]
-(if: $day &gt;= 6 and $fame &gt; 60) [
+(if: $day &gt;= 5 and $fame &gt;= 60) [
 	(set: $meph_lv to 5)
 ]
 }</tw-passagedata><tw-passagedata pid="60" name="Title" tags="" position="1238,534" size="100,100">{
@@ -1924,18 +1927,18 @@ SORCERER
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 3.5s)[
+(event: when time &gt; 2.5s)[
 (t8n: &quot;rumble&quot;)[Heaven and earth will bend to thy will.]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 6.5s)[
+(event: when time &gt; 4.5s)[
 (t8n: &quot;rumble&quot;)[Thou need only supply the words.]
 ]
 &lt;br&gt;&lt;br&gt;
 
 
-(event: when time &gt; 9.5s)[
+(event: when time &gt; 6.5s)[
 (t8n: &quot;dissolve&quot;)[[[The imp fades from view|Camp]]]
 ]
 }</tw-passagedata><tw-passagedata pid="63" name="SummonLinesA2" tags="" position="99,1449" size="100,100">{
@@ -1946,22 +1949,22 @@ SORCERER
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 3.5s)[
+(event: when time &gt; 2.5s)[
 (t8n: &quot;rumble&quot;)[I AM VEXED]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 6.5s)[
+(event: when time &gt; 4.5s)[
 (t8n: &quot;rumble&quot;)[Did thou not risk immolation to steal the very powers of Hell?]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 9.5s)[
+(event: when time &gt; 6.5s)[
 (t8n: &quot;rumble&quot;)[Or perhaps it was only the flames thou sought...]
 ]
 &lt;br&gt;&lt;br&gt;&lt;/i&gt;
 
-(event: when time &gt; 12.5s)[
+(event: when time &gt; 8.5s)[
 (t8n: &quot;dissolve&quot;)[[[The imp fades from view|Camp]]]
 ]
 }</tw-passagedata><tw-passagedata pid="64" name="SummonLinesB1" tags="" position="101,1574" size="100,100">{
@@ -1972,22 +1975,22 @@ SORCERER
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 3.5s)[
-(t8n: &quot;rumble&quot;)[The earth is shaped by thy command.]
+(event: when time &gt; 2.5s)[
+(t8n: &quot;rumble&quot;)[The earth obeys, the winds begin to whisper thy name.]
+]
+&lt;br&gt;&lt;br&gt;
+
+(event: when time &gt; 4.5s)[
+(t8n: &quot;rumble&quot;)[Raise thy fame but a fraction more...]
 ]
 &lt;br&gt;&lt;br&gt;
 
 (event: when time &gt; 6.5s)[
-(t8n: &quot;rumble&quot;)[The winds begin to whisper thy name.]
-]
-&lt;br&gt;&lt;br&gt;
-
-(event: when time &gt; 9.5s)[
-(t8n: &quot;rumble&quot;)[And thy humble servant wishes thou only success...]
+(t8n: &quot;rumble&quot;)[The Archons shall surely reward thee.]
 ]
 &lt;br&gt;&lt;br&gt;&lt;/i&gt;
 
-(event: when time &gt; 12.5s)[
+(event: when time &gt; 8.5s)[
 (t8n: &quot;dissolve&quot;)[[[The imp fades from view|Camp]]]
 ]
 }</tw-passagedata><tw-passagedata pid="65" name="SummonLinesB2" tags="" position="103,1701" size="100,100">{
@@ -1999,12 +2002,12 @@ SORCERER
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 3.5s)[
-(t8n: &quot;rumble&quot;)[A flame so bright cannot be ignored.]
+(event: when time &gt; 2.5s)[
+(t8n: &quot;rumble&quot;)[A flame so bright cannot be ignored, even in the hells.]
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 6.5s)[
+(event: when time &gt; 4.5s)[
 (t8n: &quot;rumble&quot;)[I bear a gift from the Archons themselves.]
 ]
 &lt;br&gt;&lt;br&gt;
@@ -2014,7 +2017,7 @@ SORCERER
 ]
 &lt;br&gt;&lt;br&gt;
 
-(event: when time &gt; 9.5s)[
+(event: when time &gt; 8.5s)[
 (t8n: &quot;dissolve&quot;)[[[The imp fades, leaving a strange artefact|Camp]]]
 ]
 }</tw-passagedata><tw-passagedata pid="66" name="Forge" tags="" position="400,1601" size="100,100">{
@@ -2212,7 +2215,7 @@ You assume the flawless likeness of Nezoric himself. Perfectly accurate in every
 &lt;br&gt;&lt;br&gt;
 Assuming his cruel tone, you order Rhamnos to hunt itself.
 &lt;br&gt;&lt;br&gt;
-The demon howls in rage and anguish as it is compelled to tear itself apart. The cries only fall silent when the &lt;span id=&quot;red&quot;&gt;crooked blade&lt;/span&gt; pierces the monster&#39;s own heart.
+The demon howls in rage and anguish as it is compelled to tear itself apart. Its cries only fall silent when the &lt;span id=&quot;red&quot;&gt;crooked blade&lt;/span&gt; pierces the monster&#39;s own heart.
 &lt;br&gt;&lt;br&gt;
 [[You have triumphed|NemesisComplete]]
 ]
@@ -2280,22 +2283,15 @@ You slump to the ground. As the life drains drains from your body, Rhamnos depar
 [[Sorcerer, you have been slain|BadEnd]]
 }</tw-passagedata><tw-passagedata pid="78" name="Outro" tags="" position="825,2624" size="100,100">{
 (display: &quot;HUD&quot;)
-Total Fame:
-(if: $fame &gt; 300)[&lt;span id =&quot;purple&quot;&gt;$fame (Immortal)&lt;/span&gt;]
-(else-if: $fame &gt; 250)[&lt;span id =&quot;red&quot;&gt;$fame (Sorcerer King)&lt;/span&gt;]
-(else-if: $fame &gt; 200)[&lt;span id =&quot;orange&quot;&gt;$fame (Archmage)&lt;/span&gt;]
-(else-if: $fame &gt; 150)[&lt;span id =&quot;yellow&quot;&gt;$fame (Hierophant)&lt;/span&gt;]
-(else-if: $fame &gt; 100)[&lt;span id =&quot;green&quot;&gt;$fame (Cult Leader)&lt;/span&gt;]
-(else-if: $fame &gt; 50)[&lt;span id =&quot;blue&quot;&gt;$fame (Hedge Wizard)&lt;/span&gt;]
-(else:)[&lt;span id =&quot;gray&quot;&gt;$fame (Hermit)&lt;/span&gt;]
+Total Fame: (display: &quot;FinalScore&quot;)
 &lt;br&gt;&lt;br&gt;
 
-(if: $fame &gt; 300)[(set: $home to &quot;an obsidian spire risen from the earth by your power, dominating the Lumrian skyline,&quot;)]
-(else-if: $fame &gt; 250)[(set: $home to &quot;the opulent Imperial Palace of Lumria&quot;)]
-(else-if: $fame &gt; 200)[(set: $home to &quot;a grand tower overlooking all of Zettis, capital of Lumria,&quot;)]
-(else-if: $fame &gt; 150)[(set: $home to &quot;a lavish townhouse in the upper district of Zettis, capital of Lumria,&quot;)]
+(if: $fame &gt; 200)[(set: $home to &quot;an obsidian spire risen from the earth by your power, dominating the Lumrian skyline,&quot;)]
+(else-if: $fame &gt; 170)[(set: $home to &quot;the opulent Imperial Palace of Lumria&quot;)]
+(else-if: $fame &gt; 140)[(set: $home to &quot;a grand tower overlooking all of Zettis, capital of Lumria,&quot;)]
+(else-if: $fame &gt; 120)[(set: $home to &quot;a lavish townhouse in the upper district of Zettis, capital of Lumria,&quot;)]
 (else-if: $fame &gt; 100)[(set: $home to &quot;a manor house in the Lumrian countryside&quot;)]
-(else-if: $fame &gt; 50)[(set: $home to &quot;a modest townhouse in a quiet Lumrian village&quot;)]
+(else-if: $fame &gt; 80)[(set: $home to &quot;a modest townhouse in a quiet Lumrian village&quot;)]
 (else:)[(set: $home to &quot;an isolated swampland shack&quot;)]
 You take $home as your home.
 &lt;br&gt;&lt;br&gt;
@@ -2304,7 +2300,7 @@ You take $home as your home.
 Luminaries of the age are drawn to seek your blessings. Your power lies behind each great venture, or sudden turn of fortune, and for each you extract your price.
 ]
 (if: $illusion_end is true)[
-All doorways and windows into your abode soon vanish. They say it is because you do not needs them; you can appear across Lumria at will, and nothing transpires there without your knowledge.
+All doorways and windows into your abode soon vanish. They say it is because you do not need them; you can appear across Lumria at will, and nothing transpires there without your knowledge.
 ]
 (if: $harvest_end is true)[
 You terrorize the populace with your necromatic experiments. Your powers achieve heights undreamt by mortal men, while the land is reduced to a magic-blighted waste.
@@ -2335,12 +2331,21 @@ The cowled head slowly turns towards you.
 
 [[Nezoric&#39;s fury has found you.|NemesisEncounter]]
 }</tw-passagedata><tw-passagedata pid="81" name="BadEnd" tags="" position="1317,2100" size="100,100">{
+(set: $location_c to &quot;green&quot;)
 (display: &quot;HUD&quot;)
 You were slain by &lt;span id=&quot;red&quot;&gt;Rhamnos, the demonic fury.&lt;/span&gt;
 &lt;br&gt;&lt;br&gt;
-Your final fame was: &lt;span id=&quot;green&quot;&gt;$fame&lt;/span&gt;
+Your final fame was: (display: &quot;FinalScore&quot;)
 &lt;br&gt;&lt;br&gt;
 [[Return to title|Start]]
+}</tw-passagedata><tw-passagedata pid="82" name="FinalScore" tags="" position="1204,2399" size="100,100">{
+(if: $fame &gt;= 200)[&lt;span id =&quot;purple&quot;&gt;$fame (Immortal)&lt;/span&gt;]
+(else-if: $fame &gt;= 170)[&lt;span id =&quot;blue&quot;&gt;$fame (Sorcerer King)&lt;/span&gt;]
+(else-if: $fame &gt;= 130)[&lt;span id =&quot;red&quot;&gt;$fame (Archmage)&lt;/span&gt;]
+(else-if: $fame &gt;= 110)[&lt;span id =&quot;orange&quot;&gt;$fame (Hierophant)&lt;/span&gt;]
+(else-if: $fame &gt;= 80)[&lt;span id =&quot;yellow&quot;&gt;$fame (Cult Leader)&lt;/span&gt;]
+(else-if: $fame &gt;= 50)[&lt;span id =&quot;green&quot;&gt;$fame (Hedge Wizard)&lt;/span&gt;]
+(else:)[&lt;span id =&quot;gray&quot;&gt;$fame (Hermit)&lt;/span&gt;]
 }</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
