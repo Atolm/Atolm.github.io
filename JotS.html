@@ -2191,7 +2191,7 @@ It emerges from the white-hot font transformed into a $forged_item.
 (set: $result = 100)
 ]
 (else:)[
-(set: $result = 0)
+(set: $result = (random:1,100) + (10 * $boon_lv) - 25)
 ]
 
 You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
@@ -2207,7 +2207,7 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 &lt;audio autoplay&gt;
   &lt;source src=&quot;jots_spell.ogg&quot; type=&quot;audio/ogg&quot;&gt;
 &lt;/audio&gt;
-}</tw-passagedata><tw-passagedata pid="71" name="NemesisIllusion" tags="" position="792,2122" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="71" name="NemesisIllusion" tags="" position="793,2122" size="100,100">{
 (set: $location_c to &quot;green&quot;)
 (display: &quot;HUD&quot;)
 (set: $magic = $magic - $c_illusion)
@@ -2218,7 +2218,7 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (set: $result = 100)
 ]
 (else:)[
-(set: $result = 0)
+(set: $result = (random:1,100) + (10 * $illusion_lv) - 25)
 ]
 
 You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
@@ -2243,7 +2243,7 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 (set: $result = 100)
 ]
 (else:)[
-(set: $result = 0)
+(set: $result = (random:1,100) + (10 * $harvest_lv) - 25)
 ]
 
 You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
@@ -2261,7 +2261,7 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 &lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="73" name="NemesisBoonResult" tags="" position="648,2237" size="100,100">{
 (display: &quot;HUD&quot;)
-(if: $boon_lv is 3)[
+(if: $result &gt;= 70)[
 (set: $boon_end to true)
 With a word, you grant Rhamnos the one thing it desires: freedom.
 &lt;br&gt;&lt;br&gt;
@@ -2278,7 +2278,7 @@ The demon stands implacable as a king&#39;s ransom of ruby and sapphire gems rai
 ]
 }</tw-passagedata><tw-passagedata pid="74" name="NemesisIllusionResult" tags="" position="854,2275" size="100,100">{
 (display: &quot;HUD&quot;)
-(if: $illusion_lv is 3)[
+(if: $result &gt;= 70)[
 (set: $illusion_end to true)
 You assume the flawless likeness of Nezoric himself. Perfectly accurate in every detail, as only one so familiar with the sorcerer could recall.
 &lt;br&gt;&lt;br&gt;
@@ -2297,7 +2297,7 @@ But Rhamnos cannot be swayed.
 ]
 }</tw-passagedata><tw-passagedata pid="75" name="NemesisHarvestResult" tags="" position="1021,2223" size="100,100">{
 (display: &quot;HUD&quot;)
-(if: $harvest_lv is 3)[
+(if: $result &gt;= 70)[
 (set: $harvest_end to true)
 (set: $magic to $magic + 1000)
 You sense something you couldn&#39;t before. Hundreds of souls, woven into the fabric of the demon&#39;s being. Rhamnos is animated by the malice of its own past victims!
