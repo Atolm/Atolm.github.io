@@ -882,7 +882,7 @@ $journey $ahead
 &quot;ETHANIM&quot;
 ))}</tw-passagedata><tw-passagedata pid="14" name="MagicWords" tags="" position="1709,230" size="100,100">{
 &lt;b&gt;&lt;i&gt;
-(if: $result &lt; 20)[
+(if: $result &lt;= 20)[
   (event: when time &gt; 1.0s)[
 	&lt;span id=&quot;result-bad&quot;&gt;(display: &quot;RandomWord&quot;)(t8n:&quot;pulse&quot;)[$word] &lt;/span&gt;]
   (event: when time &gt; 2.0s)[
@@ -890,7 +890,7 @@ $journey $ahead
   (event: when time &gt; 3.0s)[
 	&lt;span id=&quot;result-bad&quot;&gt;(display: &quot;RandomWord&quot;)(t8n:&quot;pulse&quot;)[$word] &lt;/span&gt;]
 ]
-(else-if: $result &lt; 40)[
+(else-if: $result &lt;= 40)[
   (event: when time &gt; 1.0s)[
 	&lt;span id=&quot;result-good&quot;&gt;(display: &quot;RandomWord&quot;)(t8n:&quot;pulse&quot;)[$word]  &lt;/span&gt;]
   (event: when time &gt; 2.0s)[
@@ -898,7 +898,7 @@ $journey $ahead
   (event: when time &gt; 3.0s)[
 	&lt;span id=&quot;result-bad&quot;&gt;(display: &quot;RandomWord&quot;)(t8n:&quot;pulse&quot;)[$word] &lt;/span&gt;]
 ]
-(else-if: $result &lt; 70)[
+(else-if: $result &lt;= 70)[
   (event: when time &gt; 1.0s)[
 	&lt;span id=&quot;result-good&quot;&gt;(display: &quot;RandomWord&quot;)(t8n:&quot;pulse&quot;)[$word]  &lt;/span&gt;]
   (event: when time &gt; 2.0s)[
@@ -2395,7 +2395,7 @@ You open the &lt;b&gt;Liber Nominum&lt;/b&gt; and speak the words:
 &lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="73" name="NemesisBoonResult" tags="" position="648,2237" size="100,100">{
 (display: &quot;HUD&quot;)
-(if: $result &gt;= 70)[
+(if: $result &gt; 70)[
 (set: $boon_end to true)
 With a word, you grant Rhamnos the one thing it desires: freedom.
 &lt;br&gt;&lt;br&gt;
@@ -2416,7 +2416,7 @@ The demon stands implacable as a king&#39;s ransom of ruby and sapphire gems rai
 &lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="74" name="NemesisIllusionResult" tags="" position="855,2274" size="100,100">{
 (display: &quot;HUD&quot;)
-(if: $result &gt;= 70)[
+(if: $result &gt; 70)[
 (set: $illusion_end to true)
 You assume the flawless likeness of Nezoric himself. Perfectly accurate in every detail, as only one so familiar with the sorcerer could recall.
 &lt;br&gt;&lt;br&gt;
@@ -2439,7 +2439,7 @@ But Rhamnos cannot be swayed.
 &lt;/audio&gt;
 }</tw-passagedata><tw-passagedata pid="75" name="NemesisHarvestResult" tags="" position="1021,2223" size="100,100">{
 (display: &quot;HUD&quot;)
-(if: $result &gt;= 70)[
+(if: $result &gt; 70)[
 (set: $harvest_end to true)
 (set: $magic to $magic + 1000)
 You sense something you couldn&#39;t before. Hundreds of souls, woven into the fabric of the demon&#39;s being. Rhamnos is animated by the malice of its own past victims!
